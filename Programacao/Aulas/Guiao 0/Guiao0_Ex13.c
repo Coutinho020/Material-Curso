@@ -2,23 +2,26 @@
 #include <string.h>
 #define TAM 100
 
-void VerificaIgualdade(char string1[],char string2[],char string3[]){
+int VerificaIgualdade(char string1[],char string2[],char string3[]){
 
 int tamanho1 = strlen(string1), tamanho2 = strlen(string2), i;
 
-if(strcmp(string1,string2)==0){
+    if(strcmp(string1,string2) == 0) 
+        strcpy(string3,"Conteudo Igual!"); 
+    else if(tamanho1 == tamanho2)
+        strcpy(string3,"Tamanho Igual!");
+    else if(strcmp(string1,string2) < 0){
+        strcpy(string3,string1);
+        strcat(string3,string2);
+    }
+    else{
+        strcpy(string3,string2);
+        strcat(string3,string1);
+    }
 
-    string3[TAM]='Conteudo Igual!';
-    puts(string3);
+    printf("%s",string3);
 
-}else if(tamanho1 == tamanho2){
-
-        string3[TAM]='Tamanho Igual!';
-        puts(string3);
-
- }else
-    strcpy(string3, strcat(string1, string2));
-    puts(string3);
+    return 0;
 }
 
 void main(){
