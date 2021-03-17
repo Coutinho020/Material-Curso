@@ -10,19 +10,25 @@ int i=0, tamanho=strlen(frase);
     while(frase[i]== ' ')
         i++;
 
-    while(frase[i]){
+    while(frase[i]!='\0'){
 
-        if(frase[i] == ' '){
+     if(frase[i]==' '){
 
-            putchar('\n');
+         if(frase[i-1]!=' '){
 
-        }else{
+             printf("\n");
+             i++;
 
-            putchar(frase[i]);
-            i++;
+     }else
+        i++;
 
-        }
-    }
+  }else{
+
+      printf("%c", frase[i]);
+      i++;
+
+  }   
+ }
 }
 
 void main(){
